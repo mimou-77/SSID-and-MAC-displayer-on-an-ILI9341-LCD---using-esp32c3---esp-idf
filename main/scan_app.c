@@ -40,7 +40,6 @@ void wifi_scan()
     uint16_t ap_count = 0; //total APs scanned
     memset(ap_info, 0, sizeof(ap_info)); //initialize elts of ap_info to 0
 
-    //while(1) {
     esp_wifi_scan_start(NULL, true);
     ESP_ERROR_CHECK(esp_wifi_scan_get_ap_num(&ap_count)); //nbr of scanned APs we found
     esp_wifi_scan_get_ap_records(&aps_nbr, ap_info); //get aps_nbr scanned APs and store them in the array ap_info 
@@ -71,17 +70,12 @@ void wifi_scan()
                 supla_device_mac[k] = mac_str[k];
             }
 
-            ESP_LOGI(TAG, "SUPLA device found : SSID = %s", supla_device_ssid);
+            ESP_LOGI(TAG, " device found : SSID = %s", supla_device_ssid);
             ESP_LOGI(TAG, "                     MAC = %s", supla_device_mac);
         }
         
     }
 
-    // supla_ssid_mac_t supla_ssid_mac =
-    //     {
-    //         .supla_device_ssid = supla_device_ssid,
-    //         .supla_device_mac = supla_device_mac
-    //     };
-    //}//end while(1)
+    
     
 }
