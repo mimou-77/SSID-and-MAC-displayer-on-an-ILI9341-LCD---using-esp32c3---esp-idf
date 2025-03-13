@@ -56,7 +56,7 @@ void wifi_scan()
         // ESP_LOGI(TAG, "MAC \t\t%s", mac_str); //mac addr of the AP
 
         
-        if (strstr((char *)(ap_info[i].bssid), "SOMEF") != NULL)
+        if (strstr((char *)(ap_info[i].bssid), "MY_AP") != NULL) // "the AP starts with "MY_AP"
         {
             
             supla_device_ssid = ap_info[i].ssid;
